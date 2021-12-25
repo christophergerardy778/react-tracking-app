@@ -1,0 +1,22 @@
+.tracking-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tracking-section__title {
+  margin: 0;
+  color: #ffffff;
+  font-weight: bolder;
+}
+
+.tracking-section__icon {
+  color: #ffd600 !important;
+}
+
+.tracking-section__content {
+  display: flex;
+  margin-top: 8px;
+  flex-direction: column;
+  gap: 18px;
+}

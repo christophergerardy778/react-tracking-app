@@ -1,0 +1,24 @@
+.tracking-card-container {
+  background-color: rgba(43, 43, 46, 0.79) !important;
+  border-radius: 8px !important;
+}
+
+.tracking-card__container > div {
+  padding: 8px;
+}
+
+.tracking-card__title {
+  margin: 0;
+  font-weight: bold;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.tracking-card__text {
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.6);
+}
