@@ -1,17 +1,36 @@
 import './TrackingSection.css';
 import AddIcon from '@mui/icons-material/Add';
 import { IconButton } from '@mui/material';
+import React from 'react';
 
-export function TrackingSection({ title, color, children }) {
-  const trackingElementDroped = () => console.log('wow');
-
+export function TrackingSection({
+  title,
+  color,
+  listValue,
+  setList,
+  children,
+}) {
   const colorHightLight = { color };
 
+  const onDropItem = (event) => {
+    const id = event.dataTransfer.getData('text/plain');
+
+    setList((state) => {
+      const list = [...state];
+      const index = state.findIndex((e) => e.id === id);
+      list[index].status = listValue;
+      return list;
+    });
+  };
+
   return (
-    <div onDrop={trackingElementDroped}>
+    <div onDragOver={(e) => e.preventDefault()} onDrop={onDropItem}>
       <div className='tracking-section'>
         <h3 className='tracking-section__title'>
-          {title} <span style={colorHightLight}>(5)</span>
+          {title}{' '}
+          <span style={colorHightLight}>
+            ({React.Children.count(children)})
+          </span>
         </h3>
         <IconButton className='tracking-section__icon'>
           <AddIcon fontSize='inherit' />

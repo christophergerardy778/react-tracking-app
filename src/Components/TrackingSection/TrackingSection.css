@@ -15,8 +15,12 @@
 }
 
 .tracking-section__content {
-  display: flex;
+  overflow-y: auto;
   margin-top: 8px;
-  flex-direction: column;
-  gap: 18px;
+  height: 90vh;
+}
+
+.tracking-section__content::-webkit-scrollbar {
+  width: 0px;
+  background-color: transparent;
 }

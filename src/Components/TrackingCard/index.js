@@ -1,9 +1,18 @@
 import './TrackingCard.css';
 import { Card, CardContent, CardMedia } from '@mui/material';
 
-export function TrackingCard({ title, text, url }) {
+export function TrackingCard({ id, title, text, url, removeFromList }) {
+  const itemDrop = (event) => {
+    event.dataTransfer.setData('text/plain', id);
+  };
+
   return (
-    <Card className='tracking-card-container' elevation={0} draggable>
+    <Card
+      className='tracking-card-container'
+      elevation={0}
+      draggable
+      onDragStart={itemDrop}
+      onDragOver={() => console.log('estan sobre mi')}>
       {url && (
         <CardMedia component='img' image={url} height={150} draggable={false} />
       )}
