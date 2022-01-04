@@ -17,7 +17,7 @@
 .tracking-section__content {
   overflow-y: auto;
   margin-top: 8px;
-  height: 90vh;
+  height: 75vh;
 }
 
 .tracking-section__content::-webkit-scrollbar {

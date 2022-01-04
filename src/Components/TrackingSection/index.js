@@ -1,21 +1,17 @@
 import './TrackingSection.css';
-import AddIcon from '@mui/icons-material/Add';
-import { IconButton } from '@mui/material';
 import React from 'react';
+import { TrackingContext } from '../../Context/TrackingContext';
+import { IconButton } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
 
-export function TrackingSection({
-  title,
-  color,
-  listValue,
-  setList,
-  children,
-}) {
+export function TrackingSection({ title, color, listValue, children }) {
+  const { setTrackingState } = React.useContext(TrackingContext);
   const colorHightLight = { color };
 
   const onDropItem = (event) => {
     const id = event.dataTransfer.getData('text/plain');
 
-    setList((state) => {
+    setTrackingState((state) => {
       const list = [...state];
       const index = state.findIndex((e) => e.id === id);
       list[index].status = listValue;
